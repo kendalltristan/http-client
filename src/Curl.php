@@ -201,10 +201,11 @@ class Curl implements ClientInterface
     /**
      * @param string $option
      * @param mixed $value
-     * @return void
+     * @return Curl
      */
-    public function setCurlOption($option, $value)
+    public function setCurlOption($option, $value): Curl
     {
         curl_setopt($this->curlHandler, $option, $value);
+        return $this;
     }
 }
